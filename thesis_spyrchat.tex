@@ -1,0 +1,65 @@
+\documentclass[a4paper,12 pt,twoside]{report}
+\usepackage{fullpage}
+\usepackage{mystyle}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs} 
+\usepackage{hyperref}
+\usepackage{booktabs,tabularx,makecell,array}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+    basicstyle=\small\ttfamily,
+    breaklines=true,
+    frame=single,
+    backgroundcolor=\color{gray!10},
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!50!black},
+    stringstyle=\color{red}
+}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} % right-aligned stretch column
+
+% S + tabularx → νέα στήλη που τεντώνει
+\newcolumntype{Y}{>{\centering\arraybackslash}S}
+\renewcommand{\arraystretch}{1.15}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=blue
+}
+
+\begin{document}
+
+\input{./chapters/chapter0.tex}
+
+
+\pagenumbering{arabic}
+
+\input{./chapters/chapter1.tex}
+
+
+%\newevenside
+%\label{part:state_of_the_art}
+
+\input{./chapters/chapter2.tex}
+
+
+\input{./chapters/chapter3.tex}
+
+
+\input{./chapters/chapter4.tex}
+
+
+\input{./chapters/chapter5.tex}
+
+\input{./chapters/chapter6.tex}
+
+%%%Bibliography
+
+%\newevenside
+%\newevenside
+%\addcontentsline{toc}{chapter}{Βιβλιογραφία} %Added with tocbibind package
+\renewcommand{\bibname}{Βιβλιογραφία}
+\bibliography{./bibliography/general,./bibliography/deep_learning.bib,./bibliography/ai.bib,./bibliography/llm.bib,./bibliography/dnn.bib,./bibliography/rag.bib,./bibliography/implementations.bib}
+\end{document}
+
